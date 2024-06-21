@@ -9,7 +9,7 @@
 int main(void)
 {
 	char a = 'a';
-	char A = 1;
+	char A = 0;
 
 	while (A <= 9)
 	{
