@@ -20,9 +20,8 @@ int main(void)
 			putchar((k / 10) + '0');
 			putchar((k % 10) + '0');
 
-			if (i == 98 && k == 99)
+			if (i != 98 && k != 99)
 			{
-				continue;
 				putchar(',');
 				putchar(' ');
 			}
