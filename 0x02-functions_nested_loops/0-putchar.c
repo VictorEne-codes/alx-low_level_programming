@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 /**
-*main - function to print putchar
+*_putchar - function to print putchar
 *Return: always return 0
 */
 
-int main(void)
+int _putchar(void)
 {
 	char put[] = "_putchar";
 	int i;
