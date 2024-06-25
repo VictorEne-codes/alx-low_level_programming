@@ -3,11 +3,11 @@
 #include "main.h"
 
 /**
-*_put - function to print putchar
+*main - function to print putchar
 *Return: always return 0
 */
 
-int _put(void)
+int main(void)
 {
 	char put[] = "_putchar";
 	int i;
@@ -16,5 +16,6 @@ int _put(void)
 	{
 		_putchar(put[i]);
 	}
+	_putchar('\n');
 	return (0);
 }
