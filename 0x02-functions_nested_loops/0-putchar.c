@@ -1,16 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 
 /**
-*_putchar - function to print putchar
+*_put - function to print putchar
 *Return: always return 0
 */
 
-int _putchar(void)
+int _put(void)
 {
 	char put[] = "_putchar";
+	int i;
 
-	write(1, put, sizeof(put) - 1);
-	write(1, "\n", 1);
+	for (i = 0; put[i] != '\0'; i++)
+	{
+		_putchar(put[i]);
+	}
 	return (0);
 }
