@@ -9,12 +9,8 @@
 int _putchar(void)
 {
 	char put[] = "_putchar";
-	int i;
 
-	for (i = 0; put[i] != '\0'; i++)
-	{
-		putchar(put[i]);
-	}
-	putchar('\n');
+	write(1, put, sizeof(put) - 1);
+	write(1, "\n", 1);
 	return (0);
 }
