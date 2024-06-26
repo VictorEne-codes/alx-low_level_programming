@@ -9,6 +9,8 @@ int main(void)
 {
 	int i;
 
+	i = 0;
+
 	j = positive_or_negative(i);
 	if (j == 0)
 	{
