@@ -11,8 +11,5 @@ int main(void)
 
 	i = 0;
 	positive_or_negative(i);
-	if (j == 0)
-	{
-		printf("%d is zero", j);
 	return (0);
 }
