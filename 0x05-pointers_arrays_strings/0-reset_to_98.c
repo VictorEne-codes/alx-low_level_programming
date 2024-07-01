@@ -3,7 +3,7 @@
 
 /**
  * reset_to_98 - function to reset tp 98
- * @*n: input
+ * @n: input
  *
  * Return: always 0
  */
