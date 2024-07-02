@@ -1,9 +1,11 @@
+#include <stdio.h>
 #include "main.h"
 #include <string.h>
 
 /**
- * rev_string - function to reverse string
- * @s: input
+ * swap - swaps char
+ * @a: input
+ *@b: input
  *
  * Return: void
  */
@@ -14,6 +16,13 @@ void swap(char *a, char *b)
 	*a = *b;
 	*b = tmp;
 }
+
+/**
+ * rev_string - reverse strings
+ * @s: input
+ *
+ * Return: void
+ */
 
 void rev_string(char *s)
 {
