@@ -3,59 +3,34 @@
 #include "main.h"
 
 /**
- * is_separator - separators of words
- * @c: input
- *
- * Return: int
- */
-
-int is_separator(char c)
-{
-	int i;
-	char separators[] = " \t\n,;.!?\"(){}";
-
-	for (i = 0; separators[i] != '\0'; i++)
-	{
-		if (c == separators[i])
-		{
-			return (1);
-		}
-	}
-	return (0);
-}
-
-/**
- * cap_string - capitalize all strings
- * @str: input
+ * cap_string - capitalize all words
+ * @s: input
  *
  * Return: char
  */
 
-char *cap_string(char *str)
+char *cap_string(char *s)
 {
-	int cap_next = 1;
-	int i = 0;
+	char *r = s;
+	int i;
+	char a[] = " \t\n,.!?\"(){}";
+	int cap = 1;
 
-	while (str[i] != '\0')
+	while (*s)
 	{
-		if (is_separator(str[i]))
+		if (cap && *s >= 'a' && *s <= 'z')
 		{
-			cap_next = 1;
+			*s -= 32;
+			cap = 0;
 		}
-		else if (cap_next && isalpha((unsigned char) str[i]))
+		for (i = 0; i < 12; i++)
 		{
-			str[i] = toupper((unsigned char) str[i]);
-			cap_next = 0;
+			if (*s == a[i])
+			{
+				cap = 1;
+			}
 		}
-		else if (isdigit((unsigned char) str[i]))
-		{
-			cap_next = 0;
-		}
-		else
-		{
-			str[i] = tolower((unsigned char) str[i]);
-		}
-		i++;
+		s++;
 	}
-	return (str);
+	return (r);
 }
