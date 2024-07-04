@@ -21,8 +21,8 @@ char *cap_string(char *s)
 		if (cap && *s >= 'a' && *s <= 'z')
 		{
 			*s -= 32;
-			cap = 0;
 		}
+		cap = 0;
 		for (i = 0; i < 12; i++)
 		{
 			if (*s == a[i])
