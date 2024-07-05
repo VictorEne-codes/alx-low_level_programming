@@ -11,6 +11,7 @@
 char *rot13(char *str)
 {
 	char off_set, *r = str;
+
 	while (*str)
 	{
 		off_set = (*str & 32) + 65;
