@@ -3,34 +3,20 @@
 
 /**
  * rot13 - encrypt using rot13
- * @s: input
+ * @str: input
  *
  * Return: char
  */
 
-char *rot13(char *s)
+char *rot13(char *str)
 {
-	int i;
-	int len = strlen(s);
-
-	for (i = 0; i < len; i++)
+	char off_set, *r = str;
+	while (*str)
 	{
-		if (s[i] >= 'a' && s[i] <= 'm')
-		{
-			s[i] += 13;
-		}
-		else if (s[i] >= 'A' && s[i] <= 'M')
-		{
-			s[i] += 13;
-		}
-		else if (s[i] >= 'n' && s[i] <= 'z')
-		{
-			s[i] -= 13;
-		}
-		else if (s[i] >= 'N' && s[i] <= 'Z')
-		{
-			s[i] -= 13;
-		}
+		off_set = (*str & 32) + 65;
+		if ((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z'))
+			*str = (*str - off_set + 13) % 26 + off_set;
+		str++;
 	}
-	return (s);
+	return (r);
 }
