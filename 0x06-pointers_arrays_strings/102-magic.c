@@ -1,11 +1,16 @@
 #include <stdio.h>
 
+/**
+ * main - entry point
+ * Return: int
+ */
+
 int main(void)
 {
 	int n;
 	int a[5];
 	int *p;
-	
+
 	a[2] = 1024;
 	p = &n;
 	/*
@@ -14,7 +19,7 @@ int main(void)
 	*    * - you are not allowed to use a
 	*    * - you are not allowed to modify
 	*    * - only one statement
-	*    * - you are not allowed to code anything else than this 
+	*    * - you are not allowed to code anything else than this
 	*/
 	*(p + 5) = 98;
 	/* ...so that this prints 98\n */
