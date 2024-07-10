@@ -19,7 +19,7 @@ int is_help(int i, int n)
 }
 
 /**
- * is_prime_number - returns 1 if the input integer is a prime number, otherwise return 0
+ * is_prime_number - returns 1 if the input is prime, otherwise 0
  * @n: input
  *
  * Return: int
