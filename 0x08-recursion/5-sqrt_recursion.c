@@ -1,6 +1,14 @@
 #include <stdio.h>
 #include "main.h"
 
+/**
+ * _sqrt_help - helper function
+ * @n: input
+ * @i: input
+ *
+ * Return: int
+ */
+
 int _sqrt_help(int n, int i)
 {
 	if (i * i > n)
