@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * _strlenrecursion - return the length og strings
+ * _strlen_recursion - return the length og strings
  * @str: input
  *
  * Return: int
