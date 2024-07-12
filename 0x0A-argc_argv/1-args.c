@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * main - ptint nane of file
+ * main - print number of arguments
  * @argc: input
  * @argv: input
  *
@@ -11,8 +11,7 @@
 
 int main(int argc, char *argv[])
 {
-	(void) argc;
-
-	printf("%s\n", argv[0]);
+	(void) argv;
+	printf("%d\n", argc);
 	return (0);
 }
