@@ -1,0 +1,366 @@
+!<arch>
+0-isupper.c/    0           0     0     644     271       `
+#include "main.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <ctype.h>
+
+/**
+ * _isupper - function to check for uppercase
+ * @c: input param
+ *
+ * Return: return 0
+ */
+
+int _isupper(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+
+0-memset.c/     0           0     0     644     248       `
+#include <stdio.h>
+#include "main.h"
+#include <string.h>
+
+/**
+ * _memset - fills memory with constant byte
+ * @s: input
+ * @b: inpit
+ * @n: input
+ *
+ * Return: char
+ */
+
+char *_memset(char *s, char b, unsigned int n)
+{
+	return (memset(s, b, n));
+}
+0-strcat.c/     0           0     0     644     227       `
+#include <stdio.h>
+#include "main.h"
+#include <string.h>
+
+/**
+ * _strcat - function to append strings
+ * @dest: input
+ * @src: input
+ *
+ * Return: char
+ */
+
+char *_strcat(char *dest, char *src)
+{
+	return (strcat(dest, src));
+}
+
+1-isdigit.c/    0           0     0     644     211       `
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * _isdigit - checks for digits
+ * @c: input param
+ *
+ * Return: 0
+ */
+
+int _isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+
+1-memcpy.c/     0           0     0     644     244       `
+#include <string.h>
+#include "main.h"
+
+/**
+ * _memcpy - functiom that copy memory area
+ * @dest: input
+ * @src: input
+ * @n: input
+ *
+ * Return: char
+ */
+
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	return (memcpy(dest, src, n));
+}
+1-strncat.c/    0           0     0     644     253       `
+#include <stdio.h>
+#include "main.h"
+#include <string.h>
+
+/**
+ * _strncat - function to append strings
+ * @dest: input
+ * @src: input
+ * @n: input
+ *
+ * Return: char
+ */
+
+char *_strncat(char *dest, char *src, int n)
+{
+	return (strncat(dest, src, n));
+}
+
+2-strchr.c/     0           0     0     644     197       `
+#include <string.h>
+#include "main.h"
+
+/**
+ * _strchr - locates a character jn a string
+ * @s: input
+ * @c: input
+ *
+ * Return: char
+ */
+
+char *_strchr(char *s, char c)
+{
+	return (strchr(s, c));
+}
+
+2-strlen.c/     0           0     0     644     171       `
+#include "main.h"
+#include <string.h>
+
+/**
+ * _strlen - function yo check string lengtg
+ * @s: input
+ *
+ * Return: void
+ */
+
+int _strlen(char *s)
+{
+	return (strlen(s));
+}
+
+2-strncpy.c/    0           0     0     644     250       `
+#include <stdio.h>
+#include "main.h"
+#include <string.h>
+
+/**
+ * _strncpy - function to copy string
+ * @dest: input
+ * @src: input
+ * @n: input
+ *
+ * Return: char
+ */
+
+char *_strncpy(char *dest, char *src, int n)
+{
+	return (strncpy(dest, src, n));
+}
+3-islower.c/    0           0     0     644     255       `
+#include <stdio.h>
+#include <ctype.h>
+#include "main.h"
+
+/**
+ * _islower - funtion to check for lowercase
+ * @c: input
+ *
+ * Return: 0 or 1
+ */
+
+int _islower(int c)
+{
+	if (c >= 'a' && c <= 'z')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+	return (0);
+}
+
+3-puts.c/       0           0     0     644     151       `
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * _puts - function to print string
+ * @str: input
+ *
+ * Return: void
+ */
+
+void _puts(char *s)
+{
+	puts(s);
+}
+
+3-strcmp.c/     0           0     0     644     216       `
+#include <stdio.h>
+#include "main.h"
+#include <string.h>
+
+/**
+ * _strcmp - function to compare strings
+ * @s1: imput
+ * @s2: input
+ *
+ * Return: int
+ */
+
+int _strcmp(char *s1, char *s2)
+{
+	return (strcmp(s1, s2));
+}
+3-strspn.c/     0           0     0     644     226       `
+#include <string.h>
+#include "main.h"
+
+/**
+ * _strspn - gets the length of a prefix substring.
+ * @s: input
+ * @accept: input
+ *
+ * Return: int
+ */
+
+unsigned int _strspn(char *s, char *accept)
+{
+	return (strspn(s, accept));
+}
+4-isalpha.c/    0           0     0     644     294       `
+#include <stdio.h>
+#include <unistd.h>
+#include "main.h"
+
+/**
+ * _isalpha - checks for alphabets
+ * @c: input parameter
+ *
+ * Return: 1 if alphabet and 0 otherwise
+ */
+
+int _isalpha(int c)
+{
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+4-strpbrk.c/    0           0     0     644     229       `
+#include <string.h>
+#include "main.h"
+
+/**
+ * _strpbrk - searches a string for any of a set of bytes.
+ * @s: input
+ * @accept: input
+ *
+ * Return: char
+ */
+
+char *_strpbrk(char *s, char *accept)
+{
+	return (strpbrk(s, accept));
+}
+
+5-strstr.c/     0           0     0     644     222       `
+#include <string.h>
+#include "main.h"
+
+/**
+ * _strstr - locates a substring
+ * @haystack: input
+ * @needle: input
+ *
+ * Return: char
+ */
+
+char *_strstr(char *haystack, char *needle)
+{
+	return (strstr(haystack, needle));
+}
+6-abs.c/        0           0     0     644     188       `
+#include <stdio.h>
+#include <stdlib.h>
+#include "main.h"
+
+/**
+ * _abs - checks for absolute number
+ * @n: input parameter
+ *
+ * Return: return 0
+ */
+
+int _abs(int n)
+{
+	return (abs(n));
+}
+9-strcpy.c/     0           0     0     644     304       `
+#include <stdio.h>
+#include "main.h"
+#include <string.h>
+
+/**
+ * _strcpy - copies string
+ * @dest: input
+ * @src: input
+ *
+ * Return: void
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0;
+
+	while (*(src + i) != '\0')
+	{
+		*(dest + i) = *(src + i);
+		i++;
+	}
+	*(dest + i) = '\0';
+	return (dest);
+}
+main.c/         0           0     0     644     154       `
+#include "main.h"
+
+int main(void)
+{
+	    _puts("\"At the end of the day, my goal was to be the best hacker\"\n\t- Kevin Mitnick");
+	        return (0);
+}
+_putchar.c/     0           0     0     644     247       `
+#include <unistd.h>
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
