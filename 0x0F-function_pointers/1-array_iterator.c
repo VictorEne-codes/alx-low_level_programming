@@ -4,7 +4,7 @@
 /**
  * array_iterator - function to execute function written
  * @array: input
- * size: input
+ * @size: input
  * @action: input
  *
  * Return: void
