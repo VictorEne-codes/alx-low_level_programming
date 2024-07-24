@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "function_pointers.h"
 #include <stdlib.h>
-#include <udis89>
 
 /**
  * main - prints the opcodes
@@ -13,29 +12,34 @@
 
 int main(int argc, char *argv[])
 {
-	ud_t ud_obj;
-	int val = 0;
+	int b, i;
+	int (*a)(int, char **) = main;
+	unsigned char opcode;
 
-	if (argc == 2)
+	if (argc != 2)
 	{
-		val = atoi(argv[1]);
-
-		if (val < 0)
-		{
-			printf("Error\n");
-			exit(2);
-		}
-
-		ud_unit(&ud_obj);
-		ud_set_input_buffer(&ud_obj, argv[1], val);
-		ud_set_mode(&ud_obj, 64);
-		ud_set_syntax(&ud_obj, UD_SYN_INTEL);
-
-		while (ud_disassemble(&ud_obj))
-		{
-			printf("\t%s\n", ud_insn_hex(&ud_obj));
-		}
+		printf("Error\n");
+		exit(1);
 	}
+	b = atoi(argv[1]);
+	if (b < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
+	for (i = 0; i < b; i++)
+	{
+		opcode = *(unsigned char *)a;
+		printf("%.2x", opcode);
+
+		if (i == b - 1)
+		{
+			continue;
+		}
+		printf(" ");
+		a++;
+	}
+	printf("\n");
 
 	return (0);
 }
