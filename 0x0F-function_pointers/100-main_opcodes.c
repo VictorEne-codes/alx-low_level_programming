@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "function_pointers.h"
 #include <stdlib.h>
-#include <udis86>
+#include <udis89>
 
 /**
  * main - prints the opcodes
@@ -14,7 +14,7 @@
 int main(int argc, char *argv[])
 {
 	ud_t ud_obj;
-	int val = 0, i = 0;
+	int val = 0;
 
 	if (argc == 2)
 	{
