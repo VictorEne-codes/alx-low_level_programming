@@ -29,6 +29,53 @@ void print_err(const char *message, const char *filename, int exit_code)
 }
 
 /**
+ * _cp - helper function
+ * @file_from: input
+ * @file_to: input
+ *
+ * Return: void
+ */
+
+void _cp(char *file_from, char *file_to)
+{
+	int fd1, fd2, num_r, num_w;
+	char buffer[BUFF_SIZE];
+
+	fd1 = open(file_from, O_RDONLY);
+	if (fd1 == -1)
+		print_err("Error: Can't read from file %s\n", file_from, 98);
+
+	fd2 = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (fd2 == -1)
+		print_err("Error: Can't write to %s\n", file_to, 99);
+
+	num_r = 1024;
+	while (num_r == 1024)
+	{
+		num_r = read(fd1, buffer, 1024);
+		if (num_r == -1)
+			print_err("Error: Can't read from file %s\n", file_from, 98);
+
+		num_w = write(fd2, buffer, num_r);
+
+		if (num_w == -1)
+			print_err("Error: Can't write to %s\n", file_to, 99);
+	}
+
+	if (num_r == -1)
+		print_err("Error: Can't read from file %s\n", file_from, 98);
+	if (close(fd2) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
+		exit(100);
+	}
+	if (close(fd1) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
+		exit(100);
+	}
+}
+/**
  * main - entry point
  * @argc: input
  * @argv: input
@@ -39,41 +86,9 @@ void print_err(const char *message, const char *filename, int exit_code)
 
 int main(int argc, char *argv[])
 {
-	int fd_from, fd_to;
-	ssize_t bytes_r, bytes_w;
-	char buffer[BUFF_SIZE];
-
 	if (argc != 3)
 		print_err("Usage: cp file_from file_to\n", NULL, 97);
-	fd_from = open(argv[1], O_RDONLY);
-	if (fd_from == -1)
-		print_err("Error: Can't read from file %s\n", argv[1], 98);
-	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC,
-			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
-	if (fd_to == -1)
-	{
-		close(fd_from);
-		print_err("Error: Can't write to %s\n", argv[2], 99);
-	}
-	while ((bytes_r = read(fd_from, buffer, BUFF_SIZE)) > 0)
-	{
-		bytes_w = write(fd_to, buffer, bytes_r);
-		if (bytes_w == -1)
-		{
-			close(fd_from);
-			close(fd_to);
-			print_err("Error: Can't write to %s\n", argv[2], 99);
-		}
-	}
-	if (bytes_r == -1)
-	{
-		close(fd_from);
-		close(fd_to);
-		print_err("Error: Can't read from file %s\n", argv[1], 98);
-	}
-	if (close(fd_from) == -1)
-		print_err("Error: Can't close fd %d\n", NULL, 100);
-	if (close(fd_to) == -1)
-		print_err("Error: Can't close fd %d\n", NULL, 100);
+	_cp(argv[1], argv[2]);
+
 	return (0);
 }
