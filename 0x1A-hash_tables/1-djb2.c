@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 /**
- * hast_djb2 - function implementing the djb2 algorithm
+ * hash_djb2 - function implementing the djb2 algorithm
  * @str: input
  *
  * Return: unsigned long int
