@@ -3,7 +3,7 @@
 
 /**
  * hash_table_delete - function that deletes a hash table
- * @he: input
+ * @ht: input
  *
  * Return: void
  */
