@@ -1,1 +1,1 @@
-This directory contains tasks on more C malloc, calloc, realoloc, and free
+This directory contains all tasks for C - Makefiles
